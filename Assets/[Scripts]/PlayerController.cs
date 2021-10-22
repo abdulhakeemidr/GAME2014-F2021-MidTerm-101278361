@@ -65,13 +65,13 @@ public class PlayerController : MonoBehaviour
         {
             var worldTouch = Camera.main.ScreenToWorldPoint(touch.position);
 
-            if (worldTouch.x > transform.position.x)
+            if (worldTouch.y > transform.position.y)
             {
                 // direction is positive
                 direction = 1.0f;
             }
 
-            if (worldTouch.x < transform.position.x)
+            if (worldTouch.y < transform.position.y)
             {
                 // direction is negative
                 direction = -1.0f;
@@ -94,9 +94,9 @@ public class PlayerController : MonoBehaviour
             direction = -1.0f;
         }
 
-        if (m_touchesEnded.x != 0.0f)
+        if (m_touchesEnded.y != 0.0f)
         {
-           transform.position = new Vector2(Mathf.Lerp(transform.position.x, m_touchesEnded.x, horizontalTValue), transform.position.y);
+           transform.position = new Vector2(transform.position.x, Mathf.Lerp(transform.position.y, m_touchesEnded.y, horizontalTValue));
         }
         else
         {
