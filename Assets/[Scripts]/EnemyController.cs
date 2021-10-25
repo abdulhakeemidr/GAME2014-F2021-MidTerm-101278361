@@ -11,6 +11,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 
+/// The Enemy Controller moves the enemies up and down across the screen
+/// 
+/// </summary>
 public class EnemyController : MonoBehaviour
 {
     public float verticalSpeed = 2;

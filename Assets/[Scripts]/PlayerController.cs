@@ -13,6 +13,13 @@ using System.ComponentModel;
 using UnityEditor;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// The Player Controller script is responsible for moving the player gameObject
+/// It offers both keyboard and touch input for moving the player.
+/// For keyboard, the keys are A and D to move up and down respectively
+/// 
+/// </summary>
 public class PlayerController : MonoBehaviour
 {
     public BulletManager bulletManager;

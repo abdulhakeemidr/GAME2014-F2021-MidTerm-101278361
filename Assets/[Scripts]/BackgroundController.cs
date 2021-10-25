@@ -11,6 +11,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// 
+/// The Background Controller is responsible for scrolling the background
+/// across the screen.
+/// 
+/// </summary>
 public class BackgroundController : MonoBehaviour
 {
     public float horizontalSpeed;
