@@ -123,7 +123,7 @@ MonoBehaviour:
   verticalBoundary: 4
   verticalSpeed: 2
   maxSpeed: 6
-  horizontalTValue: 0.1
+  verticalTValue: 0.1
   fireDelay: 0.2
 --- !u!95 &786270582
 Animator:

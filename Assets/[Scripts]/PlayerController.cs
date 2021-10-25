@@ -4,7 +4,7 @@
  * Date Modified    : October 19, 2021
  * File             : PlayerController.cs
  * Description      : This is the Player Controller Script
- * Revision History : 
+ * Revision History : Version02
  */
 
 using System.Collections;
@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Speed")]
     public float verticalSpeed;
     public float maxSpeed;
-    public float horizontalTValue;
+    public float verticalTValue;
 
     [Header("Bullet Firing")]
     public float fireDelay;
@@ -65,6 +65,8 @@ public class PlayerController : MonoBehaviour
         {
             var worldTouch = Camera.main.ScreenToWorldPoint(touch.position);
 
+            // each if statement determines if the screen touch position is above
+            // or below the player position, and assigns positive or negative direction
             if (worldTouch.y > transform.position.y)
             {
                 // direction is positive
@@ -93,10 +95,11 @@ public class PlayerController : MonoBehaviour
             // direction is negative
             direction = -1.0f;
         }
-
+        // when the touch is released, the player position is linearly interpolated to the
+        // last player touch position at the rate of verticalTvalue
         if (m_touchesEnded.y != 0.0f)
         {
-           transform.position = new Vector2(transform.position.x, Mathf.Lerp(transform.position.y, m_touchesEnded.y, horizontalTValue));
+           transform.position = new Vector2(transform.position.x, Mathf.Lerp(transform.position.y, m_touchesEnded.y, verticalTValue));
         }
         else
         {
